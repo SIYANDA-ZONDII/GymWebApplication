@@ -1,0 +1,280 @@
+﻿/* =========================================================
+   TRAINER PROFILE
+   ========================================================= */
+
+.trainer-page {
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 40px 35px 80px;
+}
+
+
+.trainer-page-hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+    margin-bottom: 50px;
+    background: #102030;
+    border: 1px solid #294151;
+    border-radius: 14px;
+}
+
+
+    .trainer-page-hero h1 {
+        margin: 10px 0 15px;
+        color: #ffffff;
+        font-size: 55px;
+        font-weight: 900;
+        line-height: 1;
+    }
+
+
+        .trainer-page-hero h1 span {
+            color: #e49400;
+        }
+
+
+    .trainer-page-hero p {
+        max-width: 700px;
+        color: #8fa3b6;
+        line-height: 1.7;
+    }
+
+
+.trainer-hero-number {
+    color: rgba(228,148,0,.15);
+    font-size: 90px;
+    font-weight: 900;
+}
+
+
+.trainer-content-section {
+    margin-bottom: 60px;
+}
+
+
+    .trainer-content-section h2 {
+        margin: 10px 0;
+        color: #ffffff;
+        font-size: 38px;
+    }
+
+
+        .trainer-content-section h2 span {
+            color: #e49400;
+        }
+
+
+.trainer-description {
+    max-width: 850px;
+    color: #8195a9;
+    line-height: 1.7;
+}
+
+
+/* INFO */
+
+.trainer-info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-top: 30px;
+}
+
+
+.trainer-info-box {
+    padding: 27px;
+    background: #f4f6fa;
+    border-radius: 10px;
+    border-left: 4px solid #e49400;
+}
+
+
+    .trainer-info-box span {
+        display: block;
+        margin-bottom: 9px;
+        color: #7b8da2;
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: 1.5px;
+    }
+
+
+    .trainer-info-box strong {
+        color: #17283a;
+        font-size: 16px;
+    }
+
+
+/* EDIT */
+
+.trainer-edit-card {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    padding: 35px;
+    margin-top: 30px;
+    background: #f4f6fa;
+    border-radius: 12px;
+}
+
+
+.trainer-form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+
+    .trainer-form-group label {
+        margin-bottom: 8px;
+        color: #53657c;
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: 1.5px;
+    }
+
+
+.trainer-form-control {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 14px;
+    background: #ffffff;
+    border: 1px solid #d7dfe8;
+    border-radius: 7px;
+    color: #17283a;
+}
+
+
+    .trainer-form-control:focus {
+        outline: none;
+        border-color: #e49400;
+        box-shadow: 0 0 0 3px rgba(228,148,0,.12);
+    }
+
+
+.trainer-readonly-field {
+    padding: 14px;
+    background: #e5e9ee;
+    border-radius: 7px;
+    color: #64758a;
+}
+
+
+.trainer-message {
+    grid-column: 1 / -1;
+    display: block;
+    padding: 14px;
+    border-radius: 6px;
+}
+
+
+.trainer-message-success {
+    background: #dff3e8;
+    color: #257848;
+}
+
+
+.trainer-message-error {
+    background: #f8dddd;
+    color: #a83737;
+}
+
+
+.trainer-error {
+    color: #c0392b;
+    margin-top: 5px;
+    font-size: 11px;
+}
+
+
+.trainer-form-actions {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 8px;
+}
+
+
+.trainer-action-button,
+.trainer-cancel-button {
+    padding: 14px 24px;
+    border: none;
+    border-radius: 6px;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+
+.trainer-action-button {
+    background: #e49400;
+    color: #ffffff;
+}
+
+
+    .trainer-action-button:hover {
+        background: #c97d00;
+        color: #ffffff;
+        text-decoration: none;
+    }
+
+
+.trainer-cancel-button {
+    background: #dfe4ea;
+    color: #17283a;
+}
+
+
+    .trainer-cancel-button:hover {
+        background: #cbd2da;
+    }
+
+
+/* FOOTER */
+
+.trainer-footer {
+    margin-top: 70px;
+    padding-top: 25px;
+    border-top: 1px solid #263b4d;
+    color: #71869a;
+    font-size: 13px;
+}
+
+
+@media (max-width: 750px) {
+
+    .trainer-page {
+        padding: 25px 18px 60px;
+    }
+
+    .trainer-page-hero {
+        padding: 30px;
+    }
+
+        .trainer-page-hero h1 {
+            font-size: 40px;
+        }
+
+    .trainer-hero-number {
+        display: none;
+    }
+
+    .trainer-info-grid,
+    .trainer-edit-card {
+        grid-template-columns: 1fr;
+    }
+
+    .trainer-form-actions {
+        flex-direction: column;
+    }
+
+    .trainer-action-button,
+    .trainer-cancel-button {
+        width: 100%;
+        text-align: center;
+    }
+}

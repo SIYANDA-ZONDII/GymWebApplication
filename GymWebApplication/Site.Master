@@ -1,0 +1,657 @@
+﻿
+<%@ Master Language="C#"
+    AutoEventWireup="true"
+    CodeBehind="Site.Master.cs"
+    Inherits="GymWebApplication.site_master" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title><%: Page.Title %> - UKZN Sport</title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
+
+    <link href="<%: ResolveUrl("~/Content/HomePage.css") %>" rel="stylesheet" />
+    <link href="<%: ResolveUrl("~/Content/About.css") %>" rel="stylesheet" />
+    <link href="<%: ResolveUrl("~/Content/Contact.css") %>" rel="stylesheet" /> 
+    <link href="<%: ResolveUrl("~/Content/Members.css") %>" rel="stylesheet" />
+    <link href="<%: ResolveUrl("~/Content/MemberDashboard.css") %>" rel="stylesheet" />
+    <link href="<%: ResolveUrl("~/Content/Activities.css") %>" rel="stylesheet" />
+    <link href="<%: ResolveUrl("~/Content/Payments.css") %>" rel="stylesheet" />
+    <link href="<%: ResolveUrl("~/Content/Membership.css") %>" rel="stylesheet" />
+    <link href="<%: ResolveUrl("~/Content/MemberProfile.css") %>" rel="stylesheet" />
+    <link href="<%: ResolveUrl("~/Content/TrainerDashboard.css") %>" rel="stylesheet" />
+    <link href="<%: ResolveUrl("~/Content/TrainerProfile.css") %>" rel="stylesheet" />
+    <link href="<%: ResolveUrl("~/Content/TrainerMembers.css") %>" rel="stylesheet" />
+    <link href="<%: ResolveUrl("~/Content/TrainerSessions.css") %>" rel="stylesheet" />
+    <link href="<%: ResolveUrl("~/Content/TrainerSchedule.css") %>" rel="stylesheet" />
+    <link href="<%: ResolveUrl("~/Content/StaffTheme.css") %>" rel="stylesheet" />
+    <link href="<%: ResolveUrl("~/favicon.ico") %>" rel="shortcut icon" />
+
+    <asp:ContentPlaceHolder ID="PageStyles" runat="server" />
+</head>
+
+<body>
+<form id="MainForm" runat="server">
+
+    <asp:ScriptManager ID="MainScriptManager" runat="server">
+        <Scripts>
+            <asp:ScriptReference Name="MsAjaxBundle" />
+            <asp:ScriptReference Name="jquery" />
+            <asp:ScriptReference Name="WebForms.js"
+                Assembly="System.Web"
+                Path="~/Scripts/WebForms/WebForms.js" />
+            <asp:ScriptReference Name="WebUIValidation.js"
+                Assembly="System.Web"
+                Path="~/Scripts/WebForms/WebUIValidation.js" />
+            <asp:ScriptReference Name="MenuStandards.js"
+                Assembly="System.Web"
+                Path="~/Scripts/WebForms/MenuStandards.js" />
+            <asp:ScriptReference Name="GridView.js"
+                Assembly="System.Web"
+                Path="~/Scripts/WebForms/GridView.js" />
+            <asp:ScriptReference Name="DetailsView.js"
+                Assembly="System.Web"
+                Path="~/Scripts/WebForms/DetailsView.js" />
+            <asp:ScriptReference Name="TreeView.js"
+                Assembly="System.Web"
+                Path="~/Scripts/WebForms/TreeView.js" />
+            <asp:ScriptReference Name="WebParts.js"
+                Assembly="System.Web"
+                Path="~/Scripts/WebForms/WebParts.js" />
+            <asp:ScriptReference Name="Focus.js"
+                Assembly="System.Web"
+                Path="~/Scripts/WebForms/Focus.js" />
+            <asp:ScriptReference Name="WebFormsBundle" />
+        </Scripts>
+    </asp:ScriptManager>
+
+    <!-- NAVIGATION BAR -->
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark ukzn-site-navbar">
+        <div class="container">
+
+            <a id="BrandHomeLink"
+                runat="server"
+                class="navbar-brand"
+                href="~/Default.aspx">UKZN SPORT</a>
+
+            <button type="button"
+                class="navbar-toggler"
+                data-bs-toggle="collapse"
+                data-bs-target="#MainNavigation"
+                aria-controls="MainNavigation"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-between"
+                id="MainNavigation">
+
+                <ul class="navbar-nav flex-grow-1">
+
+                    <!-- HOME -->
+                    <li class="nav-item">
+                        <a id="NavHome"
+                            runat="server"
+                            class="nav-link"
+                            href="~/Default.aspx">Home</a>
+                    </li>
+
+                    <!-- MEMBER NAVIGATION -->
+                    <li id="MemberProfileLink"
+                        runat="server"
+                        visible="false"
+                        class="nav-item">
+
+                        <a id="NavProfile"
+                            runat="server"
+                            class="nav-link"
+                            href="~/Member/MemberProfile.aspx">Profile</a>
+                    </li>
+
+                    <li id="MemberPaymentLink"
+                        runat="server"
+                        visible="false"
+                        class="nav-item">
+
+                        <a id="NavPayment"
+                            runat="server"
+                            class="nav-link"
+                            href="~/Member/Payments.aspx">Payments</a>
+                    </li>
+
+                    <!-- ONE COMBINED BOOKING PAGE -->
+                    <li id="MemberTrainingLink"
+                        runat="server"
+                        visible="false"
+                        class="nav-item">
+
+                        <a id="NavTraining"
+                            runat="server"
+                            class="nav-link"
+                            href="~/Member/Activities.aspx">Manage Booking</a>
+                    </li>
+
+                    <!-- OLD BOOKING LINK HIDDEN -->
+                    <li id="MemberBookingLink"
+                        runat="server"
+                        visible="false"
+                        class="nav-item">
+
+                        <a id="NavBooking"
+                            runat="server"
+                            class="nav-link"
+                            href="~/Member/Booking.aspx">Booking</a>
+                    </li>
+
+                    <!-- TRAINER NAVIGATION -->
+                    <li id="TrainerProfileLink"
+                        runat="server"
+                        visible="false"
+                        class="nav-item">
+
+                        <a id="NavTrainerProfile"
+                            runat="server"
+                            class="nav-link"
+                            href="~/Trainer/TrainerProfile.aspx">Profile</a>
+                    </li>
+
+                    <li id="TrainerSessionsLink"
+                        runat="server"
+                        visible="false"
+                        class="nav-item">
+
+                        <a id="NavTrainerSessions"
+                            runat="server"
+                            class="nav-link"
+                            href="~/Trainer/Sessions.aspx">Sessions</a>
+                    </li>
+
+                    <li id="TrainerAvailabilityLink"
+                        runat="server"
+                        visible="false"
+                        class="nav-item">
+
+                        <a id="NavTrainerAvailability"
+                            runat="server"
+                            class="nav-link"
+                            href="~/Trainer/Schedule.aspx">Availability</a>
+                    </li>
+
+                    <li id="TrainerMembersLink"
+                        runat="server"
+                        visible="false"
+                        class="nav-item">
+
+                        <a id="NavTrainerMembers"
+                            runat="server"
+                            class="nav-link"
+                            href="~/Trainer/Members.aspx">Members</a>
+                    </li>
+
+                    <!-- MANAGER NAVIGATION -->
+                    <li id="ManagerDashboardLink"
+                        runat="server"
+                        visible="false"
+                        class="nav-item">
+
+ <!--                        <a id="NavManagerDashboard"
+                            runat="server"
+                            class="nav-link"
+                            href="~/Manager/ManagerDashboard.aspx">Dashboard</a> -->
+                    </li>
+
+                    <li id="ManagerMembersLink"
+                        runat="server"
+                        visible="false"
+                        class="nav-item">
+
+                        <a id="NavManagerMembers"
+                            runat="server"
+                            class="nav-link"
+                            href="~/Manager/Members.aspx">Members</a>
+                    </li>
+
+                    <li id="ManagerTrainersLink"
+                        runat="server"
+                        visible="false"
+                        class="nav-item">
+
+                        <a id="NavManagerTrainers"
+                            runat="server"
+                            class="nav-link"
+                            href="~/Manager/Trainers.aspx">Trainers</a>
+                    </li>
+
+                    <li id="ManagerSessionsLink"
+                        runat="server"
+                        visible="false"
+                        class="nav-item">
+
+                        <a id="NavManagerSessions"
+                            runat="server"
+                            class="nav-link"
+                            href="~/Manager/Sessions.aspx">Sessions</a>
+                    </li>
+
+                    <li id="ManagerReportsLink"
+                        runat="server"
+                        visible="false"
+                        class="nav-item">
+
+                        <a id="NavManagerReports"
+                            runat="server"
+                            class="nav-link"
+                            href="~/Manager/Reports.aspx">Reports</a>
+                    </li>
+
+                    <!-- PUBLIC NAVIGATION -->
+                    <li id="PublicAboutLink"
+                        runat="server"
+                        class="nav-item">
+
+                        <a id="NavAbout"
+                            runat="server"
+                            class="nav-link"
+                            href="~/About.aspx">About</a>
+                    </li>
+
+                    <li id="PublicContactLink"
+                        runat="server"
+                        class="nav-item">
+
+                        <a id="NavContact"
+                            runat="server"
+                            class="nav-link"
+                            href="~/Contact.aspx">Contact</a>
+                    </li>
+
+                    <!-- COMPLAINT NAVIGATION -->
+
+<%
+    string complaintRole =
+        Session["UserRole"] == null
+            ? ""
+            : Session["UserRole"].ToString().Trim();
+%>
+
+<% if (Request.IsAuthenticated &&
+       (complaintRole.Equals(
+            "Member",
+            StringComparison.OrdinalIgnoreCase)
+        ||
+        complaintRole.Equals(
+            "Trainer",
+            StringComparison.OrdinalIgnoreCase)))
+   { %>
+
+    <li class="nav-item">
+        <a class="nav-link complaint-nav-link"
+           href="<%= ResolveUrl("~/Complaint.aspx") %>">
+            Manage Complaints
+        </a>
+    </li>
+
+<% }
+   else if (Request.IsAuthenticated &&
+            complaintRole.Equals(
+                "Manager",
+                StringComparison.OrdinalIgnoreCase))
+   { %>
+
+    <li class="nav-item">
+        <a class="nav-link complaint-nav-link"
+           href="<%= ResolveUrl("~/Manager/Complaint.aspx") %>">
+            Manage Complaints
+        </a>
+    </li>
+
+<% } %>
+
+                </ul>
+
+                <!-- ACCOUNT NAVIGATION -->
+                <ul class="navbar-nav">
+
+                    <li id="AnonymousLinks" runat="server">
+                        <a runat="server"
+                            class="nav-link"
+                            href="~/Account/Register.aspx">Register</a>
+                    </li>
+
+                    <li id="LoginLink" runat="server">
+                        <a runat="server"
+                            class="nav-link"
+                            href="~/Account/Login.aspx">Log in</a>
+                    </li>
+
+                    <li id="UserWelcome"
+                        runat="server"
+                        visible="false"
+                        class="nav-item">
+
+                        <a id="UserAccountLink"
+                            runat="server"
+                            class="nav-link member-name-link"
+                            href="~/Default.aspx">
+
+                            Hello,
+                            <asp:Label ID="lblUserName"
+                                runat="server"
+                                Text="User" />
+                        </a>
+                    </li>
+
+                    <li id="LogoutLink"
+                        runat="server"
+                        visible="false"
+                        class="nav-item">
+
+                        <asp:LinkButton ID="LogoutButton"
+                            runat="server"
+                            CssClass="nav-link logout-link"
+                            Text="Log out"
+                            CausesValidation="false"
+                            OnClick="LogoutButton_Click" />
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- GLOBAL SESSION REMINDER -->
+    <asp:UpdatePanel ID="GlobalReminderUpdatePanel"
+        runat="server"
+        UpdateMode="Conditional">
+
+        <ContentTemplate>
+
+            <asp:Panel ID="GlobalReminderPanel"
+                runat="server"
+                CssClass="global-session-reminder"
+                Visible="false">
+
+                <div class="global-reminder-inner">
+
+                    <div class="global-reminder-icon">!</div>
+
+                    <div class="global-reminder-text">
+                        <strong>
+                            <asp:Label ID="lblGlobalReminderTitle"
+                                runat="server" />
+                        </strong>
+
+                        <span>
+                            <asp:Label ID="lblGlobalReminderMessage"
+                                runat="server" />
+                        </span>
+                    </div>
+
+                    <a href="<%= ResolveUrl("~/Member/Activities.aspx") %>"
+                        class="global-reminder-link">
+                        MANAGE BOOKING
+                    </a>
+
+                    <asp:Button ID="btnDismissGlobalReminder"
+                        runat="server"
+                        Text="DISMISS"
+                        CssClass="global-reminder-dismiss"
+                        CausesValidation="false"
+                        OnClick="btnDismissGlobalReminder_Click" />
+
+                </div>
+            </asp:Panel>
+
+        </ContentTemplate>
+    </asp:UpdatePanel>
+
+    <!-- MAIN PAGE CONTENT -->
+    <div class="container body-content">
+
+        <asp:Literal ID="ProfileCompletionNotice" runat="server" />
+
+        <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+
+    </div>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/Scripts/bootstrap.js") %>
+    </asp:PlaceHolder>
+
+    <!-- ACTIVE NAVIGATION LINK -->
+    <script type="text/javascript">
+document.addEventListener("DOMContentLoaded", function () {
+    var currentPath = window.location.pathname.toLowerCase();
+    var links = document.querySelectorAll(".navbar .nav-link");
+
+    links.forEach(function (link) {
+        var href = link.getAttribute("href");
+        if (!href) return;
+
+        var temporaryAnchor = document.createElement("a");
+        temporaryAnchor.href = href;
+
+        if (currentPath === temporaryAnchor.pathname.toLowerCase()) {
+            link.classList.add("active");
+        }
+    });
+});
+</script>
+
+       <style>
+        /* =====================================================
+           UKZN SPORT — GLOBAL NAVIGATION THEME
+           Dark charcoal, white and bright orange
+           ===================================================== */
+
+        .ukzn-site-navbar {
+            background-color: #101114 !important;
+            border-bottom: 3px solid #F45D32;
+            padding: 8px 0;
+            min-height: 46px;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.18);
+        }
+
+        .ukzn-site-navbar .container {
+            max-width: 1200px;
+        }
+
+        /* Brand */
+        .ukzn-site-navbar .navbar-brand {
+            color: #ffffff !important;
+            font-weight: 800;
+            letter-spacing: 0.04em;
+            transition: color 0.25s ease;
+        }
+
+        .ukzn-site-navbar .navbar-brand:hover,
+        .ukzn-site-navbar .navbar-brand:focus-visible {
+            color: #F45D32 !important;
+        }
+
+        /* Navigation links */
+        .ukzn-site-navbar .navbar-nav .nav-link {
+            position: relative;
+            display: inline-block;
+            padding: 8px 12px;
+            white-space: nowrap;
+            color: #ffffff !important;
+            font-size: 12px;
+            font-weight: 700;
+            text-decoration: none !important;
+            transition: color 0.25s ease;
+        }
+
+        /* Orange underline */
+        .ukzn-site-navbar .navbar-nav .nav-link::after {
+            content: "";
+            position: absolute;
+            left: 12px;
+            right: 12px;
+            bottom: 2px;
+            height: 2px;
+            background-color: #F45D32;
+            transform: scaleX(0);
+            transform-origin: center;
+            transition: transform 0.25s ease;
+        }
+
+        .ukzn-site-navbar .navbar-nav .nav-link:hover,
+        .ukzn-site-navbar .navbar-nav .nav-link:focus-visible {
+            color: #F45D32 !important;
+        }
+
+        .ukzn-site-navbar .navbar-nav .nav-link:hover::after,
+        .ukzn-site-navbar .navbar-nav .nav-link:focus-visible::after,
+        .ukzn-site-navbar .navbar-nav .nav-link.active::after {
+            transform: scaleX(1);
+        }
+
+        .ukzn-site-navbar .navbar-nav .nav-link.active {
+            color: #F45D32 !important;
+            font-weight: 800 !important;
+        }
+
+        /* Account and user links */
+        .ukzn-site-navbar .member-name-link {
+            color: #ffffff !important;
+            font-weight: 600;
+        }
+
+        .ukzn-site-navbar .logout-link {
+            border: none;
+            background: transparent;
+            color: #ffffff !important;
+            font-weight: 700;
+        }
+
+        .ukzn-site-navbar .complaint-nav-link {
+            font-weight: 700 !important;
+        }
+
+        /* Mobile navigation toggle */
+        .ukzn-site-navbar .navbar-toggler {
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 4px;
+        }
+
+        .ukzn-site-navbar .navbar-toggler:focus {
+            box-shadow: 0 0 0 0.15rem rgba(244, 93, 50, 0.3);
+        }
+
+        .ukzn-site-navbar .navbar-toggler-icon {
+            filter: none;
+        }
+
+        /* =====================================================
+           GLOBAL SESSION REMINDER
+           Retains its existing light warning appearance
+           ===================================================== */
+
+        .global-session-reminder {
+            width: 100%;
+            border-bottom: 1px solid #F45D32;
+            background: #fff8e8;
+        }
+
+        .global-reminder-inner {
+            display: grid;
+            grid-template-columns: auto 1fr auto auto;
+            gap: 14px;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 13px 20px;
+        }
+
+        .global-reminder-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: #F45D32;
+            color: #ffffff;
+            font-weight: 900;
+        }
+
+        .global-reminder-text {
+            display: flex;
+            flex-direction: column;
+            color: #142235;
+        }
+
+        .global-reminder-text strong {
+            font-size: 13px;
+        }
+
+        .global-reminder-text span {
+            color: #566577;
+            font-size: 12px;
+        }
+
+        .global-reminder-link {
+            color: #142235;
+            font-size: 11px;
+            font-weight: 900;
+            text-decoration: none;
+        }
+
+        .global-reminder-link:hover {
+            color: #F45D32;
+        }
+
+        .global-reminder-dismiss {
+            border: none;
+            background: transparent;
+            color: #9b5c00;
+            font-size: 11px;
+            font-weight: 900;
+            cursor: pointer;
+        }
+
+        /* =====================================================
+           RESPONSIVE NAVIGATION
+           ===================================================== */
+
+        @media screen and (max-width: 575.98px) {
+            .ukzn-site-navbar .navbar-nav {
+                padding-top: 6px;
+            }
+
+            .ukzn-site-navbar .navbar-nav .nav-link {
+                display: block;
+                padding: 10px 12px;
+            }
+
+            .ukzn-site-navbar .navbar-nav .nav-link::after {
+                left: 12px;
+                right: auto;
+                width: 45px;
+            }
+
+            .global-reminder-inner {
+                grid-template-columns: auto 1fr;
+            }
+
+            .global-reminder-link,
+            .global-reminder-dismiss {
+                margin-left: 46px;
+            }
+        }
+    </style>
+
+</form>
+</body>
+</html>

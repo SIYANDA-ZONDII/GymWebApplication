@@ -1,0 +1,516 @@
+﻿/* =========================================================
+   STAFF THEME
+   Matches the Member Dashboard navy, white and gold theme.
+   Applies to Manager and Trainer pages without changing
+   their existing layouts or functionality.
+   ========================================================= */
+
+:root {
+    --staff-bg: #0d1b2a;
+    --staff-panel: #142235;
+    --staff-panel-deep: #111f2f;
+    --staff-gold: #e49400;
+    --staff-text: #ffffff;
+    --staff-muted: #9ba8b7;
+    --staff-border: rgba(255, 255, 255, 0.10);
+}
+
+/* =========================================================
+   PAGE BACKGROUNDS
+   ========================================================= */
+
+body:has( .manager-page, .members-page, .complaints-page, .manager-reports-page, .manager-sessions-page, .trainer-page, .trainer-dashboard, .trainer-sessions-page ) {
+    background: var(--staff-bg) !important;
+    color: var(--staff-text) !important;
+}
+
+    body:has( .manager-page, .members-page, .complaints-page, .manager-reports-page, .manager-sessions-page, .trainer-page, .trainer-dashboard, .trainer-sessions-page ) .body-content {
+        background: var(--staff-bg) !important;
+        color: var(--staff-text) !important;
+    }
+
+.manager-page,
+.members-page,
+.complaints-page,
+.manager-reports-page,
+.manager-sessions-page,
+.trainer-page,
+.trainer-dashboard,
+.trainer-sessions-page,
+.simplified-manager-dashboard,
+.simplified-trainer-dashboard {
+    background-color: var(--staff-bg) !important;
+    color: var(--staff-text) !important;
+}
+
+/* =========================================================
+   CARDS, PANELS AND CONTAINERS
+   ========================================================= */
+
+.manager-hero,
+.manager-page-hero,
+.manager-reports-hero,
+.manager-sessions-hero,
+.manager-campus-card,
+.manager-trainer-summary,
+.manager-stat-card,
+.manager-member-stat-card,
+.manager-trainer-stat-card,
+.manager-report-stat-card,
+.manager-summary-card,
+.manager-session-stat,
+.manager-membership-card,
+.manager-notification-item,
+.manager-edit-card,
+.manager-table-wrapper,
+.manager-table-wrap,
+.complaints-container,
+.complaints-table-wrap,
+.trainer-dashboard-hero,
+.trainer-campus-card,
+.trainer-stat-card,
+.trainer-account-box,
+.trainer-summary-card,
+.trainer-edit-card,
+.trainer-table-wrapper,
+.trainer-members-table-wrapper,
+.availability-date-card,
+.availability-slots-header,
+.schedule-stat-card,
+.availability-table-wrapper {
+    background-color: var(--staff-panel) !important;
+    color: var(--staff-text) !important;
+    border-color: var(--staff-border) !important;
+}
+
+/* Dark navy gradient for welcome panels */
+
+.manager-page-hero,
+.manager-hero,
+.manager-reports-hero,
+.manager-sessions-hero,
+.trainer-dashboard-hero {
+    background: linear-gradient( 135deg, #0d1b2a 0%, #142235 100% ) !important;
+}
+
+/* =========================================================
+   HEADINGS
+   ========================================================= */
+
+.manager-page h1,
+.manager-page h2,
+.manager-page h3,
+.manager-reports-page h1,
+.manager-reports-page h2,
+.manager-reports-page h3,
+.manager-sessions-page h1,
+.manager-sessions-page h2,
+.manager-sessions-page h3,
+.complaints-page h1,
+.complaints-page h2,
+.complaints-page h3,
+.trainer-page h1,
+.trainer-page h2,
+.trainer-page h3,
+.trainer-dashboard h1,
+.trainer-dashboard h2,
+.trainer-dashboard h3,
+.trainer-sessions-page h1,
+.trainer-sessions-page h2,
+.trainer-sessions-page h3 {
+    color: var(--staff-text) !important;
+}
+
+/* =========================================================
+   PARAGRAPHS AND SECONDARY TEXT
+   ========================================================= */
+
+.manager-page p,
+.manager-reports-page p,
+.manager-sessions-page p,
+.complaints-page p,
+.trainer-page p,
+.trainer-dashboard p,
+.trainer-sessions-page p,
+.manager-section-heading p,
+.manager-page-hero p,
+.manager-hero p,
+.manager-reports-hero p,
+.manager-sessions-hero p,
+.trainer-dashboard-hero p {
+    color: var(--staff-muted) !important;
+}
+
+/* =========================================================
+   GOLD HIGHLIGHTS AND SECTION LABELS
+   ========================================================= */
+
+.manager-label,
+.manager-section-label,
+.manager-page-hero h1 span,
+.manager-hero h1 span,
+.manager-section-heading h2 span,
+.manager-reports-hero h1 span,
+.manager-sessions-hero h1 span,
+.trainer-section-label,
+.trainer-dashboard-hero h1 span,
+.trainer-dashboard-welcome h2 span {
+    color: var(--staff-gold) !important;
+}
+
+/* =========================================================
+   TABLES
+   ========================================================= */
+
+.manager-page table,
+.manager-reports-page table,
+.manager-sessions-page table,
+.complaints-page table,
+.trainer-page table,
+.trainer-sessions-page table {
+    color: var(--staff-text) !important;
+    border-color: var(--staff-border) !important;
+}
+
+.manager-page th,
+.manager-page td,
+.manager-reports-page th,
+.manager-reports-page td,
+.manager-sessions-page th,
+.manager-sessions-page td,
+.complaints-page th,
+.complaints-page td,
+.trainer-page th,
+.trainer-page td,
+.trainer-sessions-page th,
+.trainer-sessions-page td {
+    border-color: var(--staff-border) !important;
+}
+
+/* Table headings */
+
+.manager-page th,
+.manager-reports-page th,
+.manager-sessions-page th,
+.complaints-page th,
+.trainer-page th,
+.trainer-sessions-page th {
+    background-color: var(--staff-panel-deep) !important;
+    color: var(--staff-gold) !important;
+}
+
+/* Table rows */
+
+.manager-page tbody tr,
+.manager-reports-page tbody tr,
+.manager-sessions-page tbody tr,
+.complaints-page tbody tr,
+.trainer-page tbody tr,
+.trainer-sessions-page tbody tr {
+    background-color: var(--staff-panel) !important;
+    color: var(--staff-text) !important;
+}
+
+/* =========================================================
+   INPUTS, DROPDOWNS AND TEXT AREAS
+   ========================================================= */
+
+.manager-page input,
+.manager-page select,
+.manager-page textarea,
+.manager-reports-page input,
+.manager-reports-page select,
+.manager-reports-page textarea,
+.manager-sessions-page input,
+.manager-sessions-page select,
+.manager-sessions-page textarea,
+.complaints-page input,
+.complaints-page select,
+.complaints-page textarea,
+.trainer-page input,
+.trainer-page select,
+.trainer-page textarea,
+.trainer-sessions-page input,
+.trainer-sessions-page select,
+.trainer-sessions-page textarea {
+    background-color: var(--staff-panel-deep) !important;
+    color: var(--staff-text) !important;
+    border-color: rgba(255, 255, 255, 0.16) !important;
+}
+
+    /* Placeholder text */
+
+    .manager-page input::placeholder,
+    .manager-page textarea::placeholder,
+    .manager-reports-page input::placeholder,
+    .manager-sessions-page input::placeholder,
+    .complaints-page input::placeholder,
+    .trainer-page input::placeholder,
+    .trainer-sessions-page input::placeholder {
+        color: var(--staff-muted) !important;
+    }
+
+    /* Focus states */
+
+    .manager-page input:focus,
+    .manager-page select:focus,
+    .manager-page textarea:focus,
+    .manager-reports-page input:focus,
+    .manager-reports-page select:focus,
+    .manager-reports-page textarea:focus,
+    .manager-sessions-page input:focus,
+    .manager-sessions-page select:focus,
+    .manager-sessions-page textarea:focus,
+    .complaints-page input:focus,
+    .complaints-page select:focus,
+    .complaints-page textarea:focus,
+    .trainer-page input:focus,
+    .trainer-page select:focus,
+    .trainer-page textarea:focus,
+    .trainer-sessions-page input:focus,
+    .trainer-sessions-page select:focus,
+    .trainer-sessions-page textarea:focus {
+        border-color: var(--staff-gold) !important;
+        outline-color: var(--staff-gold) !important;
+        box-shadow: 0 0 0 0.15rem rgba(228, 148, 0, 0.20) !important;
+    }
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.manager-page .btn-primary,
+.manager-reports-page .btn-primary,
+.manager-sessions-page .btn-primary,
+.complaints-page .btn-primary,
+.trainer-page .btn-primary,
+.trainer-sessions-page .btn-primary {
+    background-color: var(--staff-gold) !important;
+    border-color: var(--staff-gold) !important;
+    color: #ffffff !important;
+}
+
+    .manager-page .btn-primary:hover,
+    .manager-reports-page .btn-primary:hover,
+    .manager-sessions-page .btn-primary:hover,
+    .complaints-page .btn-primary:hover,
+    .trainer-page .btn-primary:hover,
+    .trainer-sessions-page .btn-primary:hover {
+        background-color: #c78100 !important;
+        border-color: #c78100 !important;
+        color: #ffffff !important;
+    }
+
+/* =========================================================
+   LINKS
+   ========================================================= */
+
+.manager-page a,
+.manager-reports-page a,
+.manager-sessions-page a,
+.complaints-page a,
+.trainer-page a,
+.trainer-dashboard a,
+.trainer-sessions-page a {
+    transition: color 0.2s ease;
+}
+
+    .manager-page a:not(.btn),
+    .manager-reports-page a:not(.btn),
+    .manager-sessions-page a:not(.btn),
+    .complaints-page a:not(.btn),
+    .trainer-page a:not(.btn),
+    .trainer-dashboard a:not(.btn),
+    .trainer-sessions-page a:not(.btn) {
+        color: var(--staff-gold);
+    }
+
+        .manager-page a:not(.btn):hover,
+        .manager-reports-page a:not(.btn):hover,
+        .manager-sessions-page a:not(.btn):hover,
+        .complaints-page a:not(.btn):hover,
+        .trainer-page a:not(.btn):hover,
+        .trainer-dashboard a:not(.btn):hover,
+        .trainer-sessions-page a:not(.btn):hover {
+            color: #ffffff;
+        }
+
+/* =========================================================
+   RESPONSIVE SAFETY
+   ========================================================= */
+
+.manager-page *,
+.members-page *,
+.complaints-page *,
+.manager-reports-page *,
+.manager-sessions-page *,
+.trainer-page *,
+.trainer-dashboard *,
+.trainer-sessions-page * {
+    box-sizing: border-box;
+}
+/* Manager Dashboard — match Member Dashboard */
+
+.simplified-manager-dashboard .manager-stat-card {
+    background-color: #111d2b !important;
+    color: #ffffff !important;
+    border: 1px solid rgba(255, 255, 255, 0.09) !important;
+    border-bottom: 5px solid #e49400 !important;
+    border-radius: 8px !important;
+}
+
+.simplified-manager-dashboard .manager-stat-number,
+.simplified-manager-dashboard .manager-stat-number span {
+    color: #ffffff !important;
+    opacity: 1 !important;
+}
+
+.simplified-manager-dashboard .manager-stat-title {
+    color: #e49400 !important;
+}
+
+.simplified-manager-dashboard .manager-stat-card p {
+    color: #c3ccd6 !important;
+    opacity: 1 !important;
+}
+
+.simplified-manager-dashboard .manager-stat-link {
+    color: #e49400 !important;
+    opacity: 1 !important;
+}
+
+.simplified-manager-dashboard .manager-stat-card:hover {
+    background-color: #14283a !important;
+}
+
+.simplified-manager-dashboard .manager-section-heading h2 {
+    color: #ffffff !important;
+    font-family: Impact, "Arial Narrow", Arial, sans-serif !important;
+    font-weight: 900 !important;
+}
+
+    .simplified-manager-dashboard .manager-section-heading h2 span {
+        color: #e49400 !important;
+    }
+
+/* =========================================================
+   MANAGER DASHBOARD — FINAL VISUAL ADJUSTMENTS
+   ========================================================= */
+
+/* Give the notifications area a lighter navy-blue background */
+.simplified-manager-dashboard .manager-notifications,
+.simplified-manager-dashboard .manager-announcements,
+.simplified-manager-dashboard .manager-notification-section,
+.simplified-manager-dashboard .manager-announcements-section {
+    background-color: #14283a !important;
+    color: #ffffff !important;
+    border-color: rgba(255, 255, 255, 0.10) !important;
+}
+
+/* Keep the notification message area readable */
+.simplified-manager-dashboard .manager-notification-item,
+.simplified-manager-dashboard .manager-notification-content {
+    background-color: #182c40 !important;
+    color: #ffffff !important;
+    border-color: rgba(255, 255, 255, 0.12) !important;
+}
+
+/* Match the Member dashboard heading typography */
+.simplified-manager-dashboard .manager-section-heading h2,
+.simplified-manager-dashboard .manager-notifications h2,
+.simplified-manager-dashboard .manager-announcements h2,
+.simplified-manager-dashboard .manager-notification-section h2,
+.simplified-manager-dashboard .manager-announcements-section h2 {
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-size: 32px !important;
+    font-weight: 700 !important;
+    letter-spacing: -0.5px !important;
+    color: #ffffff !important;
+}
+
+    /* Gold heading emphasis without the overly bright appearance */
+    .simplified-manager-dashboard .manager-section-heading h2 span,
+    .simplified-manager-dashboard .manager-notifications h2 span,
+    .simplified-manager-dashboard .manager-announcements h2 span,
+    .simplified-manager-dashboard .manager-notification-section h2 span,
+    .simplified-manager-dashboard .manager-announcements-section h2 span {
+        color: #e49400 !important;
+    }
+
+/* Keep small uppercase section labels consistent */
+.simplified-manager-dashboard .manager-label {
+    color: #e49400 !important;
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-size: 11px !important;
+    font-weight: 800 !important;
+    letter-spacing: 3px !important;
+}
+
+/* Preserve readable announcement text */
+.simplified-manager-dashboard .manager-notification-item p,
+.simplified-manager-dashboard .manager-notification-content p {
+    color: #c3ccd6 !important;
+}
+
+/* =========================================================
+   MANAGER ANNOUNCEMENTS — MATCH MEMBER ANNOUNCEMENTS
+   ========================================================= */
+
+.simplified-manager-dashboard .manager-notifications,
+.simplified-manager-dashboard .manager-announcements,
+.simplified-manager-dashboard .manager-notification-section,
+.simplified-manager-dashboard .manager-announcements-section {
+    background: #142235 !important;
+    border: 1px solid rgba(255, 255, 255, 0.10) !important;
+    border-radius: 9px !important;
+    padding: 22px 19px !important;
+    margin: 0 0 55px !important;
+    color: #ffffff !important;
+}
+
+    /* Notification heading and unread count */
+    .simplified-manager-dashboard .manager-notifications h2,
+    .simplified-manager-dashboard .manager-announcements h2,
+    .simplified-manager-dashboard .manager-notification-section h2,
+    .simplified-manager-dashboard .manager-announcements-section h2 {
+        margin-top: 7px !important;
+        margin-bottom: 17px !important;
+        font-size: 26px !important;
+        font-weight: 800 !important;
+        color: #ffffff !important;
+    }
+
+        .simplified-manager-dashboard .manager-notifications h2 span,
+        .simplified-manager-dashboard .manager-announcements h2 span,
+        .simplified-manager-dashboard .manager-notification-section h2 span,
+        .simplified-manager-dashboard .manager-announcements-section h2 span {
+            color: #e49400 !important;
+        }
+
+    /* Empty-state message */
+    .simplified-manager-dashboard .manager-notifications p,
+    .simplified-manager-dashboard .manager-announcements p,
+    .simplified-manager-dashboard .manager-notification-section p,
+    .simplified-manager-dashboard .manager-announcements-section p {
+        color: #ffffff !important;
+    }
+
+/* Individual announcement cards */
+.simplified-manager-dashboard .manager-notification-item,
+.simplified-manager-dashboard .manager-notification-content {
+    background: #0d1b2a !important;
+    border: 1px solid #2c4055 !important;
+    border-radius: 8px !important;
+    padding: 15px 18px !important;
+    color: #ffffff !important;
+}
+
+/* Unread badge */
+.simplified-manager-dashboard .manager-unread,
+.simplified-manager-dashboard .unread-badge {
+    background: rgba(228, 148, 0, 0.15) !important;
+    color: #e49400 !important;
+    border-radius: 20px !important;
+    padding: 8px 12px !important;
+}
+

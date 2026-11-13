@@ -1,0 +1,490 @@
+﻿/* =========================================================
+   MEMBER DASHBOARD
+   ========================================================= */
+
+.member-dashboard {
+    box-sizing: border-box;
+    width: 100%;
+    min-height: calc(100vh - 50px);
+    padding: 42px 0 70px;
+    background-color: #0d1b2a;
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+    .member-dashboard *,
+    .member-dashboard *::before,
+    .member-dashboard *::after {
+        box-sizing: border-box;
+    }
+
+/* =========================================================
+   COMPACT WELCOME
+   ========================================================= */
+
+.member-welcome.compact-dashboard-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: calc(100% - 80px);
+    max-width: 1250px;
+    margin: 0 auto 35px;
+    padding: 0 0 25px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.section-label {
+    display: block;
+    margin-bottom: 10px;
+    color: #e49400;
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+}
+
+.member-welcome.compact-dashboard-heading h1 {
+    margin: 7px 0 9px;
+    color: #ffffff;
+    font-family: Impact, "Arial Narrow", Arial, sans-serif;
+    font-size: 42px;
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: 0.02em;
+}
+
+    .member-welcome.compact-dashboard-heading h1 span {
+        color: #e49400;
+    }
+
+.member-welcome.compact-dashboard-heading p {
+    max-width: 650px;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.60);
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.dashboard-date-card {
+    min-width: 230px;
+    padding: 20px 23px;
+    border-left: 5px solid #e49400;
+    background-color: #111d2b;
+    color: #ffffff;
+    text-align: right;
+}
+
+    .dashboard-date-card span {
+        display: block;
+        margin-bottom: 7px;
+        color: #e49400;
+        font-size: 10px;
+        font-weight: 900;
+        letter-spacing: 0.16em;
+    }
+
+    .dashboard-date-card strong {
+        color: #ffffff;
+        font-size: 13px;
+    }
+
+/* =========================================================
+   SESSION REMINDER
+   ========================================================= */
+
+.session-reminder {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 20px;
+    align-items: center;
+    width: calc(100% - 80px);
+    max-width: 1250px;
+    margin: 28px auto;
+    padding: 24px;
+    border: 1px solid #efbf62;
+    border-left: 6px solid #e49400;
+    border-radius: 8px;
+    background-color: #fff8e8;
+    color: #142235;
+    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.14);
+}
+
+.session-reminder-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: #e49400;
+    color: #111d2b;
+    font-size: 22px;
+    font-weight: 900;
+}
+
+.session-reminder-label {
+    color: #9a5a00;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 0.12em;
+}
+
+.session-reminder h3 {
+    margin: 5px 0;
+    color: #142235;
+    font-size: 18px;
+}
+
+.session-reminder p {
+    margin: 0 0 8px;
+    color: #526174;
+    font-size: 13px;
+}
+
+.session-reminder-link {
+    color: #9a5a00;
+    font-size: 11px;
+    font-weight: 900;
+    text-decoration: none;
+}
+
+.session-reminder-dismiss {
+    padding: 10px 14px;
+    border: none;
+    border-radius: 4px;
+    background-color: #142235;
+    color: #ffffff;
+    font-size: 10px;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+/* =========================================================
+   DASHBOARD SECTIONS
+   ========================================================= */
+
+.dashboard-content-section {
+    width: calc(100% - 80px);
+    max-width: 1250px;
+    margin: 45px auto;
+}
+
+.dashboard-section-heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 23px;
+}
+
+    .dashboard-section-heading h2 {
+        margin: 7px 0 0;
+        color: #ffffff;
+        font-family: Impact, "Arial Narrow", Arial, sans-serif;
+        font-size: 32px;
+        font-weight: 900;
+        letter-spacing: 0.02em;
+    }
+
+        .dashboard-section-heading h2 span {
+            color: #e49400;
+        }
+
+    .dashboard-section-heading > p {
+        margin: 0;
+        color: rgba(255, 255, 255, 0.50);
+        font-size: 13px;
+    }
+
+/* =========================================================
+   STATISTIC CARDS
+   ========================================================= */
+
+.member-statistics {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+    width: 100%;
+    margin: 0;
+}
+
+.member-stat-card {
+    display: block;
+    min-width: 0;
+    min-height: 195px;
+    padding: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    border-bottom: 5px solid #e49400;
+    border-radius: 8px;
+    background-color: #111d2b;
+    color: #ffffff;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.16);
+}
+
+    .member-stat-card > span {
+        display: block;
+        margin-bottom: 10px;
+        color: #e49400;
+        font-size: 10px;
+        font-weight: 900;
+        letter-spacing: 0.13em;
+    }
+
+    .member-stat-card strong {
+        display: block;
+        margin: 7px 0 10px;
+        color: #ffffff;
+        font-size: 35px;
+        font-weight: 900;
+        line-height: 1;
+        overflow-wrap: anywhere;
+    }
+
+    .member-stat-card p {
+        min-height: 34px;
+        margin: 0;
+        color: #c3ccd6;
+        font-size: 12px;
+        line-height: 1.5;
+    }
+
+.member-status-text {
+    color: #e49400 !important;
+    font-size: 22px !important;
+}
+
+.membership-stat-card {
+    background-color: #14283a;
+}
+
+.stat-card-link {
+    display: inline-block;
+    margin-top: 14px;
+    color: #e49400;
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: 0.07em;
+    text-decoration: none;
+}
+
+    .stat-card-link:hover {
+        color: #ffffff;
+        text-decoration: none;
+    }
+
+/* =========================================================
+   QUICK ACTION CARDS
+   ========================================================= */
+
+.member-features {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+}
+
+.member-card {
+    position: relative;
+    display: block;
+    min-width: 0;
+    min-height: 280px;
+    padding: 28px 25px;
+    overflow: hidden;
+    border-top: 5px solid transparent;
+    border-radius: 8px;
+    background-color: #f4f7fb;
+    color: #0d1b2a;
+    text-decoration: none;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.14);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+    .member-card:hover {
+        color: #0d1b2a;
+        text-decoration: none;
+        transform: translateY(-5px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+    }
+
+.card-number {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: rgba(212, 137, 26, 0.18);
+    font-family: Impact, "Arial Narrow", Arial, sans-serif;
+    font-size: 30px;
+}
+
+.card-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    margin-bottom: 25px;
+    border-radius: 7px;
+    background-color: rgba(212, 137, 26, 0.12);
+    color: #d4891a;
+    font-size: 20px;
+    font-weight: 900;
+}
+
+.member-card h3 {
+    margin: 0;
+    color: #0d1b2a;
+    font-size: 19px;
+    font-weight: 900;
+}
+
+.member-card p {
+    margin: 12px 0 45px;
+    color: #718096;
+    font-size: 13px;
+    line-height: 1.65;
+}
+
+.card-link {
+    position: absolute;
+    bottom: 25px;
+    left: 25px;
+    color: #d4891a;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 0.07em;
+}
+
+.complaint-action-card {
+    border-top-color: #e49400;
+    background-color: #fffaf1;
+}
+
+.complaint-card-icon {
+    background-color: #e49400 !important;
+    color: #111d2b !important;
+}
+
+/* =========================================================
+   ACCOUNT INFORMATION
+   ========================================================= */
+
+.member-info-section {
+    width: calc(100% - 80px);
+    max-width: 1250px;
+    margin: 60px auto 0;
+    padding: 0;
+}
+
+.info-header {
+    margin-bottom: 25px;
+}
+
+    .info-header h2 {
+        margin: 0;
+        color: #ffffff;
+        font-family: Impact, "Arial Narrow", Arial, sans-serif;
+        font-size: 32px;
+        line-height: 1;
+        letter-spacing: 0.02em;
+    }
+
+        .info-header h2 span {
+            color: #e49400;
+        }
+
+    .info-header p {
+        margin: 12px 0 0;
+        color: rgba(255, 255, 255, 0.50);
+        font-size: 13px;
+    }
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.info-box {
+    min-width: 0;
+    padding: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.04);
+}
+
+.info-label {
+    display: block;
+    margin-bottom: 10px;
+    color: rgba(255, 255, 255, 0.42);
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 0.12em;
+}
+
+.info-box strong {
+    color: #ffffff;
+    font-size: 14px;
+    overflow-wrap: anywhere;
+}
+
+/* =========================================================
+   RESPONSIVE LAYOUT
+   ========================================================= */
+
+@media screen and (max-width: 1050px) {
+
+    .member-statistics {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .member-features {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media screen and (max-width: 760px) {
+
+    .member-welcome.compact-dashboard-heading,
+    .dashboard-section-heading {
+        display: block;
+    }
+
+    .dashboard-date-card {
+        margin-top: 22px;
+        text-align: left;
+    }
+
+    .dashboard-section-heading > p {
+        margin-top: 10px;
+    }
+
+    .session-reminder {
+        grid-template-columns: auto 1fr;
+    }
+
+    .session-reminder-dismiss {
+        grid-column: 2;
+        justify-self: start;
+    }
+}
+
+@media screen and (max-width: 600px) {
+
+    .member-welcome.compact-dashboard-heading,
+    .dashboard-content-section,
+    .session-reminder,
+    .member-info-section {
+        width: calc(100% - 36px);
+    }
+
+    .member-statistics,
+    .member-features,
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .member-welcome.compact-dashboard-heading h1 {
+        font-size: 34px;
+    }
+}

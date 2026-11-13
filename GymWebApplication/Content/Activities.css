@@ -1,0 +1,682 @@
+﻿/* =========================================================
+   ACTIVITIES PAGE
+   ========================================================= */
+
+.activities-page {
+    width: 100%;
+    min-height: calc(100vh - 50px);
+    background: #0D1B2A;
+    color: #ffffff;
+    padding-bottom: 60px;
+    font-family: Arial, sans-serif;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.activities-hero {
+    position: relative;
+    min-height: 350px;
+    padding: 65px 70px 55px;
+    overflow: hidden;
+    background: linear-gradient( 135deg, #0D1B2A 0%, #10263A 55%, #14352F 100% );
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+
+    .activities-hero::before {
+        content: "";
+        position: absolute;
+        width: 430px;
+        height: 430px;
+        right: -100px;
+        top: -220px;
+        border: 1px solid rgba(212,137,26,0.25);
+        border-radius: 50%;
+    }
+
+
+    .activities-hero::after {
+        content: "";
+        position: absolute;
+        width: 280px;
+        height: 280px;
+        right: 70px;
+        top: -50px;
+        border: 1px solid rgba(255,255,255,0.06);
+        border-radius: 50%;
+    }
+
+
+.activities-hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+}
+
+
+/* =========================================================
+   BADGE
+   ========================================================= */
+
+.activities-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 9px 15px;
+    margin-bottom: 30px;
+    border: 1px solid rgba(212,137,26,0.45);
+    border-radius: 4px;
+    color: #D4891A;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+
+    .activities-badge span {
+        width: 8px;
+        height: 8px;
+        background: #D4891A;
+        border-radius: 50%;
+    }
+
+
+/* =========================================================
+   TITLE
+   ========================================================= */
+
+.activities-hero h1 {
+    margin: 0;
+    font-family: Impact, Arial Narrow, sans-serif;
+    font-size: clamp(58px, 7vw, 96px);
+    line-height: 0.88;
+    letter-spacing: 0.015em;
+    color: #ffffff;
+}
+
+
+    .activities-hero h1 span {
+        display: block;
+        color: #D4891A;
+    }
+
+
+.activities-hero p {
+    max-width: 620px;
+    margin-top: 25px;
+    color: rgba(255,255,255,0.58);
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+
+.activities-hero-number {
+    position: absolute;
+    right: 70px;
+    bottom: 35px;
+    font-family: Impact, Arial Narrow, sans-serif;
+    font-size: 130px;
+    line-height: 1;
+    color: rgba(255,255,255,0.035);
+    user-select: none;
+}
+
+
+/* =========================================================
+   INTRO
+   ========================================================= */
+
+.activities-intro {
+    max-width: 1250px;
+    margin: auto;
+    padding: 60px 70px 25px;
+}
+
+
+.section-label {
+    display: block;
+    margin-bottom: 12px;
+    color: #D4891A;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+}
+
+
+.activities-intro h2 {
+    margin: 0;
+    font-family: Impact, Arial Narrow, sans-serif;
+    font-size: 42px;
+    line-height: 1;
+    letter-spacing: 0.02em;
+}
+
+
+    .activities-intro h2 span {
+        color: #D4891A;
+    }
+
+
+.activities-intro p {
+    max-width: 600px;
+    margin-top: 14px;
+    color: rgba(255,255,255,0.5);
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   ACTIVITY GRID
+   ========================================================= */
+
+.activity-grid {
+    max-width: 1250px;
+    margin: 25px auto 0;
+    padding: 0 70px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+
+/* =========================================================
+   ACTIVITY CARD
+   ========================================================= */
+
+.activity-card {
+    position: relative;
+    min-height: 310px;
+    padding: 30px;
+    background: #F4F7FB;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+
+    .activity-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+    }
+
+
+.activity-card-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+
+.activity-icon {
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(212,137,26,0.1);
+    border-radius: 9px;
+    color: #D4891A;
+    font-size: 23px;
+}
+
+
+.activity-number {
+    font-family: Impact, Arial Narrow, sans-serif;
+    font-size: 32px;
+    color: rgba(212,137,26,0.15);
+}
+
+
+.activity-card h3 {
+    margin-top: 25px;
+    margin-bottom: 0;
+    color: #0D1B2A;
+    font-size: 21px;
+    font-weight: 700;
+}
+
+
+.activity-card > p {
+    max-width: 500px;
+    margin-top: 12px;
+    color: #718096;
+    font-size: 13px;
+    line-height: 1.65;
+}
+
+
+/* =========================================================
+   ACTIVITY DETAILS
+   ========================================================= */
+
+.activity-details {
+    display: flex;
+    gap: 45px;
+    margin-top: 22px;
+}
+
+
+    .activity-details div {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+
+    .activity-details span {
+        color: #9AA7B5;
+        font-size: 9px;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+    }
+
+
+    .activity-details strong {
+        color: #0D1B2A;
+        font-size: 11px;
+        letter-spacing: 0.04em;
+    }
+
+
+/* =========================================================
+   BUTTON
+   ========================================================= */
+
+.activity-button {
+    position: absolute;
+    right: 30px;
+    bottom: 27px;
+    padding: 10px 15px;
+    border: 1px solid rgba(212,137,26,0.45);
+    border-radius: 6px;
+    background: transparent;
+    color: #D4891A;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    cursor: pointer;
+    transition: all 0.18s ease;
+}
+
+
+    .activity-button:hover {
+        background: #D4891A;
+        color: #ffffff;
+    }
+
+
+/* =========================================================
+   NOTICE
+   ========================================================= */
+
+.activities-notice {
+    position: relative;
+    max-width: 1110px;
+    margin: 70px auto 0;
+    padding: 35px 40px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    background: rgba(255,255,255,0.035);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 9px;
+    overflow: hidden;
+}
+
+
+.notice-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 65px;
+    height: 65px;
+    border-radius: 9px;
+    background: #D4891A;
+    color: #ffffff;
+    font-family: Impact, Arial Narrow, sans-serif;
+    font-size: 25px;
+}
+
+
+.activities-notice h2 {
+    margin: 0;
+    font-family: Impact, Arial Narrow, sans-serif;
+    font-size: 28px;
+}
+
+
+    .activities-notice h2 span {
+        color: #D4891A;
+    }
+
+
+.activities-notice p {
+    margin: 8px 0 0;
+    color: rgba(255,255,255,0.45);
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.activities-footer {
+    max-width: 1110px;
+    margin: 60px auto 0;
+    text-align: center;
+}
+
+
+    .activities-footer div {
+        height: 1px;
+        margin-bottom: 20px;
+        background: rgba(255,255,255,0.1);
+    }
+
+
+    .activities-footer p {
+        margin: 0;
+        color: rgba(255,255,255,0.35);
+        font-size: 11px;
+        letter-spacing: 0.05em;
+    }
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    .activities-hero {
+        padding: 50px 28px;
+    }
+
+    .activities-hero-number {
+        display: none;
+    }
+
+    .activities-intro {
+        padding: 50px 28px 25px;
+    }
+
+    .activity-grid {
+        grid-template-columns: 1fr;
+        padding: 0 28px;
+    }
+
+    .activities-notice {
+        margin-left: 28px;
+        margin-right: 28px;
+        padding: 25px;
+        align-items: flex-start;
+    }
+
+    .activities-footer {
+        margin-left: 28px;
+        margin-right: 28px;
+    }
+}
+
+
+@media (max-width: 500px) {
+
+    .activity-card {
+        padding: 24px;
+        min-height: 330px;
+    }
+
+    .activity-button {
+        position: static;
+        margin-top: 25px;
+    }
+}
+/* =========================================================
+   ACTIVITIES TABLE
+   ========================================================= */
+
+/* Outer table area */
+.activities-table-wrapper {
+    width: 100%;
+    margin-top: 30px;
+}
+
+
+/* Scroll container */
+.activities-table-container {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    background: #ffffff;
+    border-radius: 14px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.20);
+    -webkit-overflow-scrolling: touch;
+}
+
+
+/* =========================================================
+   MAIN GRIDVIEW TABLE
+   ========================================================= */
+
+.activities-table {
+    width: 100% !important;
+    min-width: 1200px;
+    border-collapse: collapse !important;
+    border-spacing: 0 !important;
+    background: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+    /* =========================================================
+   TABLE HEADER
+   ========================================================= */
+
+    .activities-table th {
+        background: #111d2b !important;
+        color: #ffffff !important;
+        padding: 18px 20px !important;
+        text-align: left !important;
+        font-size: 12px !important;
+        font-weight: 700 !important;
+        text-transform: uppercase;
+        letter-spacing: 0.8px;
+        white-space: nowrap;
+        border: none !important;
+        border-bottom: 3px solid #e49400 !important;
+    }
+
+
+    /* =========================================================
+   TABLE ROWS
+   ========================================================= */
+
+    .activities-table td {
+        background: #ffffff !important;
+        color: #34445a !important;
+        padding: 18px 20px !important;
+        text-align: left !important;
+        font-size: 14px !important;
+        font-weight: 500;
+        white-space: nowrap;
+        border: none !important;
+        border-bottom: 1px solid #e2e7ed !important;
+        vertical-align: middle !important;
+    }
+
+
+    /* =========================================================
+   ALTERNATING ROWS
+   ========================================================= */
+
+    .activities-table tr:nth-child(even) td {
+        background: #f6f8fb !important;
+    }
+
+
+    /* =========================================================
+   HOVER
+   ========================================================= */
+
+    .activities-table tr:hover td {
+        background: #edf1f5 !important;
+    }
+
+
+    /* =========================================================
+   ACTIVITY NAME
+   ========================================================= */
+
+    .activities-table td:first-child {
+        color: #142235 !important;
+        font-weight: 700 !important;
+        min-width: 160px;
+    }
+
+
+    /* =========================================================
+   DATE
+   ========================================================= */
+
+    .activities-table td:nth-child(2) {
+        min-width: 120px;
+        font-weight: 600;
+    }
+
+
+    /* =========================================================
+   START TIME
+   ========================================================= */
+
+    .activities-table td:nth-child(3) {
+        min-width: 100px;
+        font-weight: 600;
+    }
+
+
+    /* =========================================================
+   END TIME
+   ========================================================= */
+
+    .activities-table td:nth-child(4) {
+        min-width: 100px;
+        font-weight: 600;
+    }
+
+
+    /* =========================================================
+   DURATION
+   ========================================================= */
+
+    .activities-table td:nth-child(5) {
+        min-width: 180px;
+    }
+
+
+    /* =========================================================
+   TRAINER
+   ========================================================= */
+
+    .activities-table td:nth-child(6) {
+        min-width: 170px;
+        color: #142235 !important;
+        font-weight: 700 !important;
+    }
+
+
+    /* =========================================================
+   SPECIALISATION
+   ========================================================= */
+
+    .activities-table td:nth-child(7) {
+        min-width: 160px;
+    }
+
+
+    /* =========================================================
+   CAPACITY
+   ========================================================= */
+
+    .activities-table td:nth-child(8) {
+        min-width: 100px;
+        text-align: center !important;
+        font-weight: 700;
+    }
+
+
+    /* =========================================================
+   MEMBER ATTENDANCE
+   ========================================================= */
+
+    .activities-table td:nth-child(9) {
+        min-width: 150px;
+        text-align: center !important;
+        font-weight: 700;
+    }
+
+
+    /* =========================================================
+   STAFF ATTENDANCE
+   ========================================================= */
+
+    .activities-table td:nth-child(10) {
+        min-width: 150px;
+        text-align: center !important;
+    }
+
+
+    /* =========================================================
+   STATUS
+   ========================================================= */
+
+    .activities-table td:nth-child(11) {
+        min-width: 120px;
+        font-weight: 700 !important;
+    }
+
+
+/* =========================================================
+   TABLE MESSAGE
+   ========================================================= */
+
+.activities-message {
+    display: block;
+    margin-top: 18px;
+    color: #8fa0b5;
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media screen and (max-width: 900px) {
+
+    .activities-table-container {
+        border-radius: 10px;
+    }
+
+    .activities-table {
+        min-width: 1200px !important;
+    }
+
+        .activities-table th {
+            padding: 15px 16px !important;
+            font-size: 11px !important;
+        }
+
+        .activities-table td {
+            padding: 15px 16px !important;
+            font-size: 13px !important;
+        }
+}

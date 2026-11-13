@@ -1,0 +1,377 @@
+﻿/* =========================================================
+   TRAINER SESSIONS
+   ========================================================= */
+
+.trainer-sessions-page {
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 40px 35px 80px;
+}
+
+
+.trainer-sessions-hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+    margin-bottom: 40px;
+    background: #102030;
+    border: 1px solid #294151;
+    border-radius: 14px;
+}
+
+
+    .trainer-sessions-hero h1 {
+        margin: 10px 0 15px;
+        color: #ffffff;
+        font-size: 55px;
+        font-weight: 900;
+    }
+
+
+        .trainer-sessions-hero h1 span {
+            color: #e49400;
+        }
+
+
+    .trainer-sessions-hero p {
+        max-width: 700px;
+        color: #8fa3b6;
+        line-height: 1.7;
+    }
+
+
+.trainer-hero-number {
+    color: rgba(228,148,0,.15);
+    font-size: 90px;
+    font-weight: 900;
+}
+
+
+/* SUMMARY */
+
+.trainer-session-summary {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+
+.trainer-summary-card {
+    padding: 28px;
+    background: #f4f6fa;
+    border-radius: 10px;
+    border-left: 4px solid #e49400;
+}
+
+
+    .trainer-summary-card span {
+        display: block;
+        color: #8292a5;
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: 1.5px;
+    }
+
+
+    .trainer-summary-card strong {
+        display: block;
+        margin: 10px 0;
+        color: #142235;
+        font-size: 34px;
+    }
+
+
+    .trainer-summary-card p {
+        margin: 0;
+        color: #718199;
+        font-size: 13px;
+    }
+
+
+/* EDIT */
+
+.trainer-edit-session-panel {
+    padding: 32px;
+    margin-bottom: 40px;
+    background: #f4f6fa;
+    border-left: 4px solid #e49400;
+    border-radius: 10px;
+}
+
+
+.trainer-edit-session-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+
+    .trainer-edit-session-header h2 {
+        margin-top: 8px;
+        color: #142235;
+        font-size: 28px;
+    }
+
+
+        .trainer-edit-session-header h2 span {
+            color: #e49400;
+        }
+
+
+.trainer-close-button {
+    border: none;
+    background: transparent;
+    color: #7c8ca0;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+
+.trainer-edit-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+
+.trainer-edit-field {
+    display: flex;
+    flex-direction: column;
+}
+
+
+    .trainer-edit-field label {
+        margin-bottom: 8px;
+        color: #53657c;
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: 1.5px;
+    }
+
+
+.trainer-input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 13px;
+    background: #ffffff;
+    border: 1px solid #d7dfe8;
+    border-radius: 7px;
+    color: #17283a;
+}
+
+
+    .trainer-input:focus {
+        outline: none;
+        border-color: #e49400;
+        box-shadow: 0 0 0 3px rgba(228,148,0,.12);
+    }
+
+
+.trainer-readonly-value {
+    padding: 13px;
+    background: #e5e9ee;
+    border-radius: 7px;
+    color: #617288;
+}
+
+
+.trainer-save-button {
+    padding: 14px 22px;
+    border: none;
+    border-radius: 6px;
+    background: #e49400;
+    color: #ffffff;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+
+/* TABLE */
+
+.trainer-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    background: #f4f6fa;
+    border-radius: 12px;
+    box-shadow: 0 12px 30px rgba(0,0,0,.18);
+}
+
+
+.trainer-sessions-table {
+    width: 100%;
+    min-width: 950px;
+    border-collapse: collapse;
+    color: #17283a;
+}
+
+
+    .trainer-sessions-table th {
+        padding: 16px 14px;
+        background: #142235;
+        color: #ffffff;
+        text-align: left;
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: 1px;
+        white-space: nowrap;
+    }
+
+
+    .trainer-sessions-table td {
+        padding: 16px 14px;
+        border-bottom: 1px solid #dfe4ea;
+        font-size: 13px;
+        white-space: nowrap;
+    }
+
+
+    .trainer-sessions-table tr:nth-child(even) td {
+        background: #ffffff;
+    }
+
+
+    .trainer-sessions-table tr:hover td {
+        background: #edf1f5;
+    }
+
+
+/* STATUS */
+
+.session-status-pending,
+.session-status-completed,
+.session-status-cancelled,
+.session-status-default {
+    display: inline-block;
+    padding: 6px 10px;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: 800;
+}
+
+
+.session-status-pending {
+    background: #fff1d6;
+    color: #c47b00;
+}
+
+
+.session-status-completed {
+    background: #dff3e8;
+    color: #23834d;
+}
+
+
+.session-status-cancelled {
+    background: #f7dddd;
+    color: #b23b3b;
+}
+
+
+.session-status-default {
+    background: #e3e7ec;
+    color: #5d6b7d;
+}
+
+
+/* ACTIONS */
+
+.trainer-session-actions {
+    display: flex;
+    gap: 8px;
+}
+
+
+.trainer-update-button,
+.trainer-cancel-button {
+    padding: 8px 11px;
+    border-radius: 5px;
+    border: none;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: .7px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+.trainer-update-button {
+    background: #e49400;
+    color: #ffffff;
+}
+
+
+    .trainer-update-button:hover {
+        background: #c97d00;
+        color: #ffffff;
+    }
+
+
+.trainer-cancel-button {
+    background: #e2e5e9;
+    color: #b23b3b;
+}
+
+
+    .trainer-cancel-button:hover {
+        background: #d5d9de;
+        color: #9d2e2e;
+    }
+
+
+.trainer-session-message {
+    display: block;
+    margin-bottom: 20px;
+    padding: 14px;
+    background: #18293b;
+    border-left: 4px solid #e49400;
+    color: #d4dee7;
+}
+
+
+.trainer-description {
+    color: #8195a9;
+    line-height: 1.7;
+}
+
+
+.trainer-footer {
+    margin-top: 70px;
+    padding-top: 25px;
+    border-top: 1px solid #263b4d;
+    color: #71869a;
+    font-size: 13px;
+}
+
+
+@media (max-width: 800px) {
+
+    .trainer-sessions-page {
+        padding: 25px 18px 60px;
+    }
+
+    .trainer-sessions-hero {
+        padding: 30px;
+    }
+
+        .trainer-sessions-hero h1 {
+            font-size: 40px;
+        }
+
+    .trainer-hero-number {
+        display: none;
+    }
+
+    .trainer-session-summary,
+    .trainer-edit-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .trainer-edit-session-panel {
+        padding: 22px;
+    }
+}

@@ -1,0 +1,367 @@
+﻿/* =========================================================
+   MEMBERS PAGE
+   ========================================================= */
+
+.members-page {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 40px 38px 65px;
+    box-sizing: border-box;
+}
+
+
+    /* =========================================================
+   HERO
+   ========================================================= */
+
+    .members-page .trainer-page-hero {
+        position: relative;
+        min-height: 250px;
+        padding: 52px 52px;
+        margin-bottom: 55px;
+        background: #0d1c2b;
+        border: 1px solid rgba(255,255,255,0.10);
+        border-radius: 0 0 16px 16px;
+        overflow: hidden;
+        box-sizing: border-box;
+    }
+
+
+    .members-page .trainer-page-hero-content {
+        position: relative;
+        z-index: 2;
+        max-width: 720px;
+    }
+
+
+    .members-page .trainer-page-hero h1 {
+        margin: 0 0 18px;
+        color: #ffffff;
+        font-size: 56px;
+        font-weight: 800;
+        line-height: .95;
+        letter-spacing: -2px;
+    }
+
+
+        .members-page .trainer-page-hero h1 span {
+            color: #f39a00;
+        }
+
+
+    .members-page .trainer-page-hero p {
+        margin: 0;
+        max-width: 650px;
+        color: #8fa8bb;
+        font-size: 16px;
+        line-height: 1.7;
+    }
+
+
+    .members-page .trainer-hero-number {
+        position: absolute;
+        top: 18px;
+        right: 42px;
+        color: rgba(243,154,0,.12);
+        font-size: 105px;
+        font-weight: 800;
+        line-height: 1;
+    }
+
+
+/* =========================================================
+   MEMBERS SECTION
+   ========================================================= */
+
+.members-section {
+    margin-bottom: 55px;
+}
+
+
+.members-section-heading {
+    margin-bottom: 28px;
+}
+
+
+    .members-section-heading h2 {
+        margin: 0 0 10px;
+        color: #ffffff;
+        font-size: 40px;
+        font-weight: 500;
+        line-height: 1.1;
+    }
+
+
+        .members-section-heading h2 span {
+            color: #f39a00;
+        }
+
+
+    .members-section-heading p {
+        margin: 0;
+        color: #8fa8bb;
+        font-size: 15px;
+        line-height: 1.7;
+    }
+
+
+/* =========================================================
+   TABLE WRAPPER
+   ========================================================= */
+
+.trainer-members-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    background: #f3f5f8;
+    border-left: 4px solid #f39a00;
+    border-radius: 10px;
+    box-shadow: 0 12px 30px rgba(0,0,0,.18);
+}
+
+
+/* =========================================================
+   TABLE
+   ========================================================= */
+
+.trainer-table {
+    width: 100% !important;
+    border-collapse: collapse;
+    border-spacing: 0;
+    color: #19324a;
+    font-size: 14px;
+}
+
+
+    /* =========================================================
+   HEADER
+   ========================================================= */
+
+    .trainer-table th {
+        padding: 15px 18px;
+        background: #e7ecf1;
+        border-bottom: 1px solid #d3dce5;
+        color: #61798e;
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: 1.5px;
+        text-align: left;
+        white-space: nowrap;
+    }
+
+
+    /* =========================================================
+   ROWS
+   ========================================================= */
+
+    .trainer-table td {
+        padding: 15px 18px;
+        background: #f8fafc;
+        border-bottom: 1px solid #dce3e9;
+        color: #577189;
+        font-size: 13px;
+        line-height: 1.35;
+        white-space: nowrap;
+    }
+
+
+    .trainer-table tr:nth-child(even) td {
+        background: #eef2f6;
+    }
+
+
+    .trainer-table tr:hover td {
+        background: #e4eaf0;
+    }
+
+
+    .trainer-table tr:last-child td {
+        border-bottom: none;
+    }
+
+
+    /* =========================================================
+   MEMBER ID
+   ========================================================= */
+
+    .trainer-table td:first-child {
+        color: #19324a;
+        font-weight: 700;
+    }
+
+
+    /* =========================================================
+   MEMBER NAME
+   ========================================================= */
+
+    .trainer-table td:nth-child(2) {
+        color: #19324a;
+        font-weight: 600;
+    }
+
+
+    /* =========================================================
+   STATUS
+   ========================================================= */
+
+    .trainer-table td:last-child {
+        color: #279866;
+        font-weight: 700;
+    }
+
+
+/* =========================================================
+   EMPTY MESSAGE
+   ========================================================= */
+
+.trainer-empty-message {
+    display: block;
+    padding: 22px 24px;
+    background: #f3f5f8;
+    border-left: 4px solid #f39a00;
+    border-radius: 8px;
+    color: #60788e;
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   INFORMATION SECTION
+   ========================================================= */
+
+.members-info-section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+    margin-bottom: 55px;
+}
+
+
+.members-info-card {
+    display: flex;
+    gap: 22px;
+    padding: 30px;
+    background: #0d1c2b;
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+
+.members-info-number {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f39a00;
+    border-radius: 7px;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 800;
+}
+
+
+.members-info-content h3 {
+    margin: 0 0 10px;
+    color: #ffffff;
+    font-size: 25px;
+    font-weight: 500;
+}
+
+
+    .members-info-content h3 span {
+        color: #f39a00;
+    }
+
+
+.members-info-content p {
+    margin: 0;
+    color: #829bad;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.members-page .trainer-footer {
+    margin-top: 0;
+}
+
+
+.members-page .trainer-footer-line {
+    width: 100%;
+    height: 1px;
+    margin-bottom: 20px;
+    background: rgba(255,255,255,.12);
+}
+
+
+.members-page .trainer-footer p {
+    margin: 0;
+    color: #69879b;
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .members-page {
+        padding: 30px 25px 55px;
+    }
+
+        .members-page .trainer-page-hero {
+            padding: 42px 35px;
+        }
+
+            .members-page .trainer-page-hero h1 {
+                font-size: 46px;
+            }
+
+    .members-info-section {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .members-page {
+        padding: 25px 15px 45px;
+    }
+
+        .members-page .trainer-page-hero {
+            padding: 35px 25px;
+            min-height: 210px;
+        }
+
+            .members-page .trainer-page-hero h1 {
+                font-size: 36px;
+            }
+
+        .members-page .trainer-hero-number {
+            display: none;
+        }
+
+    .members-section-heading h2 {
+        font-size: 32px;
+    }
+
+    .trainer-table th,
+    .trainer-table td {
+        padding: 12px 14px;
+    }
+
+    .members-info-card {
+        padding: 24px;
+        flex-direction: column;
+    }
+}
